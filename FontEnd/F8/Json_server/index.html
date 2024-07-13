@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sửa xóa</title>
+</head>
+<body>
+    <div>
+        <h2>Danh sách khóa học</h2>
+        <ul id="list-courses">
+
+        </ul>
+    </div>
+    <div>
+        <div>
+            <label for="">Name</label>
+            <input type="text" name = "name">
+        </div>
+        <div>
+            <label for="">Description</label>
+            <input type="text" name = "description">
+        </div>
+        <div>
+            <button id="create" type="submit">Create</button>
+            <button type="submit" id="update" style="display: none;">Update</button>
+        </div>
+    </div>
+</body>
+<script>
+    var coursesApi = " http://localhost:3000/courses";
+
+    function start(){
+        //chay len thi lay khoa hoc
+        getCourses(function (courses){
+            //render ra dữ liệu
+            handleCourse(courses);
+
+            handleCreateform();
+        });
+
+    }
+
+    start();
+    // lấy giá cource
+    function getCourses(callback){
+        fetch(coursesApi)
+            .then(function (response){
+                return response.json();
+            })
+            .then(callback)
+    }
+
+    //render course
+    function handleCourse(courses){
+        var listcourser = document.querySelector('#list-courses');
+        var html = courses.map(function (course){
+            return `
+                <li class = "course-item-${course.id}">
+                    <h4>${course.name}</h4>   
+                    <p>${course.description}</p>
+                    <button onclick="handleDeleteCourses(${course.id})">Xóa</button>
+                    <button onclick="handleUpdateCourses(${course.id})">Sửa</button>
+                </li>
+            `;
+        })
+        listcourser.innerHTML = html.join('');
+    }
+
+    function handleCreateform() {
+        var createBtn = document.querySelector('#create');
+
+        createBtn.onclick = function() {
+            //lay gia tri của ô input
+            var name = document.querySelector('input[name = "name"]').value;
+            var description = document.querySelector('input[name = "description"]').value;
+
+            var formdata = {
+                name: name,
+                description: description
+            };
+            createCourses(formdata);
+        }
+    }
+
+//Hàm này là làm việc với API khi create ////////////////////WHERE c.user_id = ?';
+    function createCourses(data, callback) {
+        console.log(callback);
+        var options = {
+            method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'// thông báo kiểu dữ liệu là json
+				},
+				body: JSON.stringify(data)// truyền sang dạng stringify là json
+        }
+        fetch(coursesApi, options)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(callback)
+    }
+
+    // SUA
+    function updateCourse (data, id, callback){
+        var options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+
+        }
+        fetch(coursesApi + '/' + id, options)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(callback)
+
+    }
+
+    function handleUpdateCourses(id) {
+        //thay đổi nut create thành nut update
+        var createBtn = document.querySelector('#create');
+        createBtn.style.display = 'none';
+        var UpdateBtn = document.querySelector('#update');
+        UpdateBtn.style.display = 'block';
+
+        // cho dữ liệu vào thẻ input
+        var takeName = document.querySelector('.course-item-' +id+ ' h4').innerText;
+        var takeDescription = document.querySelector('.course-item-'+ id +' p').innerText;
+
+        document.querySelector('input[name="name"]').value = takeName;    
+        document.querySelector('input[name="description"]').value = takeDescription;
+        UpdateBtn.onclick = function() {
+            var newName = document.querySelector('input[name="name"]').value;
+            var newDescription = document.querySelector('input[name="description"]').value;
+            var formData = {
+                name: newName,
+                description: newDescription
+            }
+            updateCourse(formData, id);
+            // chuyển đổi nút update thành nút create
+            updateBtn.style.display = 'none';
+            createBtn.style.display = 'block';
+        }
+    }
+
+    //Xoa-> khi render ra thì gọi vào (bắt xự kiện)
+    function handleDeleteCourses(id, callback) {
+        var options = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }
+        fetch(coursesApi + '/' + id, options)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(callback)
+    }
+</script>
+</html>

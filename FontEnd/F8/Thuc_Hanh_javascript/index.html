@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Luyentap/JS/index.js">
+</head>
+<body>
+    
+</body>
+    <script>
+        const users = [
+    {
+        user_id:1,
+        name:'Bao Linh'
+    },
+
+    {
+        user_id: 2,
+        name: 'Phuong Thao'
+    },
+
+    {
+        user_id:3,
+        name:'Ngoc Trinh'
+    },   
+] 
+
+const comments = [
+    {
+        comment_id: 1,
+        user_id:1,
+        content:'Anh oi khi nao ra video ạ'
+    },
+    {
+        comment_id:2,
+        user_id: 2,
+        content:'Vua ra xong luon em oi'
+    },     
+]  
+// Step 1: Lấy ra user_id từ mảng comments
+function getIdsCmt(comments) { 
+    var user_ids = comments.map(function(comment){ 
+        return comment.user_id
+    })   
+    return user_ids
+}   
+
+// console.log(getIdsCmt(comments));  
+// Step 2: Lấy ra Object user có id tồn tại trong user_ids
+function getInfo_User_Cmted(getIdsCmt){
+    var infoUser = users.filter(function(user){  
+        return getIdsCmt(comments).includes(user.user_id)
+    })  
+    return infoUser
+} 
+
+// console.log(getInfo_User_Cmted(getIdsCmt)); 
+// Step 3: Từ Object user lấy ra một Object gồm inforUser và mảng comments 
+function getObject(getInfo_User_Cmted){  
+    return { 
+        inforUser:  getInfo_User_Cmted(getIdsCmt),  
+        cmts: comments
+    }
+}  
+
+// console.log(getObject(getInfo_User_Cmted)); 
+// Step 4: Hiển thị ra giao diện
+var commentBlock = document.querySelector('#comment-block')  
+var html = ''
+getObject(getInfo_User_Cmted).cmts.forEach(function(comment) {
+    var user = getObject(getInfo_User_Cmted).inforUser.find(function(user){
+        return user.user_id === comment.user_id;
+    })
+    html += `<li>${user.name}: ${comment.content}</li>`;
+});
+setTimeout(() => {
+    commentBlock.innerHTML = html;
+}, 2000);
+
+    
+    </script>
+</html>

@@ -1,0 +1,14 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "name": "Kiến thức cơ bản, cho người mới bắt đầu",
+        "description": "Kiến thức cớ bản, tổng quan cho người mới bắt đầu"
+      },
+      {
+        "name": "Tới Văn",
+        "description": "Tới Văn",
+        "id": 2
+      }
+    ]
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chào các bạn</h1>
+    <ul id="emlemnt_Id">
+
+    </ul>
+    <script src="./index.js">
+        
+    </script>
+</body>
+</html>
+
+<!-- function getComment() {
+    return new Promise(function (resolve) {
+         resolve(comments);
+    })
+}
+
+function getUserById (UserID) {
+    return new Promise(function (resolve) {
+        var userName = uses.filter(function (user){
+            return UserID.includes(user.id);
+        })
+        resolve(userName);
+    })
+}
+
+getComment()
+    .then(function (comments) {
+        var result = comments.map(function (comment) {
+            return comment.idUses;
+        });
+
+        return getUserById(result)
+            .then(function (uses){
+                return {
+                    // chỗ này phải đúng ở tên mảng
+                    uses: uses,
+                    comments: comments
+                }
+        })
+    })
+
+    .then (function (data) {
+        var html = '';
+        var IDElemntBlock = document.getElementById('emlemnt_Id');
+        data.comments.forEach(function (comment) {
+            var users = data.uses.find(function (user) {
+                return user.id === comment.idUses;
+            })
+            html += `<li>${users.name}: ${comment.comment} </li>`
+        });
+        IDElemntBlock.innerHTML = html;
+
+    }); -->

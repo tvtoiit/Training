@@ -1,0 +1,189 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "img": "https://didongthongminh.vn/images/products/2022/08/15/resized/galaxy-z-fold4-copy.webp",
+      "name": "Samsung Galaxy Z Fold4 12GB/512GB Chính hãng",
+      "price": "44.490.000 đ",
+      "priceOld": "4.690.000đ",
+      "percent": "10%"
+    },
+    {
+      "id": 2,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/redmi-note-11-4g-dgw-1_1643249453.webp",
+      "name": "Xiaomi Redmi Note 11 4G 4GB/64GB Chính hãng",
+      "price": "4.290.000 đ",
+      "priceOld": "4.690.000đ",
+      "percent": "20%"
+    },
+    {
+      "id": 3,
+      "img": "https://didongthongminh.vn/images/products/2022/08/17/resized/iphone-11-64gb-red-do-chinh-hang_1643100922.webp",
+      "name": "iPhone 11 64GB Chính Hãng VN/A",
+      "price": "4.290.000 đ",
+      "priceOld": "4.690.000đ",
+      "percent": "30%"
+    },
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },{
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    }
+    ,
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },{
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    },
+    {
+      "id": 4,
+      "img": "https://didongthongminh.vn/images/products/2022/08/05/resized/samsung-galaxy-s22-ultra-8gb-128gb-green-chinh-hang_1644465385.webp",
+      "name": "Điện thoại trả góp",
+      "price": "12.000.000",
+      "priceOld": "89.000",
+      "percent": "23%"
+    },
+    {
+      "id": 5,
+      "img": "https://didongthongminh.vn/images/products/2022/08/18/resized/xiaomi-redmi-note-11s-8gb-128gb-xanh-chinh-hang_1645092072.webp",
+      "name": "ĐIện thoại mưới ra mắt hôm nay",
+      "price": "123.000.00",
+      "priceOld": "12.000",
+      "percent": "124%"
+    }
+
+
+  ]
+}

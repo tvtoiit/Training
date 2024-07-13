@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App-chat</title>
+</head>
+<body>
+    <h1>Chat siêu nhanh</h1>
+    <ul id="messages"></ul>
+    <form id= "chat-form">
+        <input type="text" id="chat-mess">
+        <button id="sen-chat">Gửi</button>
+    </form>
+</body>
+
+<script src="/socket.io/socket.io.js">
+
+</script>
+<script>
+    //Khởi tạp web socket
+    const socket = io();
+    const chatForm = document.querySelector('#chat-form');
+    const chatMes = document.querySelector('#chat-mess');
+    chatForm.addEventListener('submit', (e) => {
+        //để k submit form
+        e.preventDefault();
+        const message = chatMes.value
+        //Gửi lên server
+        socket.emit('on-chat', {
+            message: message,
+        });
+        chatMes.value = '';
+    })
+    const messages = document.querySelector('#messages');
+    socket.on('user-chat', (message)=> {
+        const chatItem = document.createElement('li');
+        chatItem.textContent = message.message;
+        messages.appendChild(chatItem);
+    });
+</script>
+</html>

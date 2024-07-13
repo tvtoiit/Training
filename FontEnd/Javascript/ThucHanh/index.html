@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form method="post" id="loginForm">
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td>
+                    <input type="text" id="username" name="username" value=""/>
+                    <span id="username_err"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td>
+                    <input type="text" id="pasword" name="pasword" value=""/>
+                    <span id="password_err"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập lại mật khẩu</td>
+                <td>
+                    <input type="text" id="repassword" name="repassword" value=""/>
+                    <span id="repassword_err"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>phone</td>
+                <td>
+                    <input type="text" id="phone" name="phone" value=""/>
+                    <span id="phone_err"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" id="email" name="email" value=""/>
+                    <span id="email_err"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" id="btn" onclick="return validate();" value="Đăng kí"/>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+<script src="./xuliform.js"></script>
+</html>
