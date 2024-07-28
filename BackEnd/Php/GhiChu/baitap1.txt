@@ -1,0 +1,15 @@
+1. Đảo ngược chuỗi? Bạn có thể viết chương trình mà không dùng bất kì phương thức nào có sẵn.
+2. Viết chương trình kiểm tra 2 chuỗi có đảo chữ không?
+3. Kiểm tra chuỗi có tất cả các kí tự duy nhất không?
+   + 1. Sử Dụng Hàm count_chars
+   + 2. Sử Dụng Mảng Để Theo Dõi Ký Tự Đã Xuất Hiện
+   + 3. Sử Dụng Hàm array_count_values
+   + 4. Sử Dụng Hàm str_split và array_unique
+4. Kiểm tra 1 chuỗi có đang xoay 1 chuỗi khác không?
+5. Tìm các kí tự trùng lặp trong chuỗi 
+6. Tìm kí tự không lặp lại đầu tiên trong chuỗi
+7. Tìm tất cả các chuỗi con của chuỗi cha
+8. Tìm độ dài của chuỗi mà không sử dụng bất kì phương thức nào có sẵn
+9. Viết chương trình in tất cả các hoán vị của chuỗi.
+
+ 

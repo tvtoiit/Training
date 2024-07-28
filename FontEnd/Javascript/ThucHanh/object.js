@@ -12,13 +12,16 @@
 
 const obj = {
     name: 'Nguyen Van A',
-    lop: '12A10'
+    lop: 'Cntt k42'
 }
+obj.title = 'Hoc lap trinh';
+delete obj.lop;
 
-const objCopy = Object.assign({}, obj);
-for (let key in objCopy) {
-    console.log(key + ': ' + objCopy[key]);
-}
+console.log(obj);
+
+
+
+
 
 
 
