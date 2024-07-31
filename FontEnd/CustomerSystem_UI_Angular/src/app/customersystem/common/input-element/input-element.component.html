@@ -1,0 +1,27 @@
+<div *ngIf="fieldType === '0'" >
+<input
+      [type]="type"
+      [placeholder]="placeholder"
+      (ngModelChange)="onValueChange($event)"
+      [(ngModel)]="value"
+      [disabled]="disabled" />
+</div>
+
+<div *ngIf="fieldType === '1'">
+      <input 
+            [type]="type"
+            [placeholder]="placeholder"
+            (ngModelChange)="onValueChange($event)"
+            [(ngModel)]="value"
+            [disabled]="disabled" />
+</div>
+
+<div *ngIf="fieldType === '2'">
+      <input 
+            [type]="type"
+            [placeholder]="placeholder"
+            (ngModelChange)="onValueChange($event)"
+            [(ngModel)]="value"
+            [disabled]="disabled" />
+</div>
+

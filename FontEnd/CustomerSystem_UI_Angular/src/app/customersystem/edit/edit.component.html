@@ -1,0 +1,71 @@
+<div id="main">
+    <div class = "edit-container">
+        <header-common></header-common>
+        <div class = "edit-container__header">
+            <span class = "edit-container__headerText edit-container__headerText">Login > Search Customer > Edit Customer Info</span>
+            <div class = "edit-container__wellcom">
+            <div class="edit-header">
+                <div class = "edit-container__wellcomLeft edit-container__headerText">Welcome: {{ user }}</div>
+                <a href ="#">Log Out</a>
+            </div>
+            </div>
+            <div class="line-br">Edit</div>
+        </div>
+        <div class="main-edit__cotainer">
+            <div class="edit-container__content">
+                <div class="edit-container__content--error">Thông báo lỗi</div>
+                <div class="edit-container__content-Id edit-container__end">
+                    <label class="edit-container__content-IdText edit-context__minWith">Customer Id</label>
+                    <label for=dtoCustomerId class="edit-container__content-IdLable edit-container__headerText" id ="lblCustomerID"></label>
+                </div>
+                <div class="edit-container__content-Name edit-context__minWith">
+                    <label class="edit-container__contentName-input edit-container__headerText">Customer Name</label>
+                    <input-element 
+                        [fieldType]="'2'"
+                        #customerName
+                        id="txtCustomerName" type="text" class="form-with__input"
+                        type="text" 
+                        placeholder="" >
+                    </input-element>
+                </div>
+                    <div class="edit-container__content-Sex edit-context__minWith">
+                    <label class="edit-container__content-Sexlable edit-container__headerText">Sex</label>
+                    <select id="cboSex" name="sex">
+                            <option value="" class="cbooption"></option>
+                            <option class="cbooption" value="0">Male</option>
+                            <option class="cbooption" value="1">Female</option>
+                        </select>
+                    </div>
+                <div class="edit-container__content-Birthday edit-context__minWith">
+                    <label class="edit-container__contentBirthday-input">Birthday</label>		
+                    <input-element 
+                        [fieldType]="'2'"
+                        #txtCustomerBirthday
+                        class="form-with__input"
+                        type="text" 
+                        placeholder="">
+                    </input-element>
+                </div>
+                <div class="edit-container__content-Email edit-context__minWith">
+                    <label class="edit-container__contentEmail-input edit-container__headerText">Email</label>
+                    <input-element 
+                        [fieldType]="'2'"
+                        #txtCustomerEmail
+                        class="form-with__input"
+                        type="text" 
+                        placeholder="" >
+                    </input-element>
+                </div>
+                <div class="edit-container__content-Address edit-context__minWith">			
+                    <label class="edit-container__contentAddress-input edit-container__headerText">Address</label>
+                    <textarea id="txaAddress"  name="address"></textarea>
+                </div>
+                <div class="edit-container__btnContent">
+                    <button (click)="handleEdit()" class="edit-container__btnContent-Save">Save</button>
+                    <button (click)="handleClearForm()" id="btnClearEdit"  class="edit-container__btnContent-Clear">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-common></footer-common>
+</div>

@@ -1,0 +1,41 @@
+<div class="content">
+    <header-common></header-common>
+    <div class="content-text">Login</div>
+    <div class="content-header__login">
+        <div>Xin chào : {{ user }}</div>
+        <a href="#" (click)="logoutHandle()">Logout</a>
+    </div>
+    <div class="content-login">
+        <div class="content-login__header">
+            <h3>LOGIN</h3>
+            <div id="lblErrorMessage">
+                'Thong bao lỗi'
+            </div>
+        </div>
+        <div class="content-login__container">
+            <div class="form-group">
+                <label for="fullname" class="form-label form-label__userID">User
+                    Id: </label>
+                <input-element [fieldType]="'0'" #userName
+                    [type]="inputConfig.type" 
+                    [(value)]="inputConfig.value" 
+                    [placeholder]="'Nhap tai khoan'"></input-element>
+            </div>
+            <div class="form-group__password">
+                <label for="password" class="form-label">Password: </label>
+                <input-element [fieldType]="'1'" #password
+                    [type]="inputConfig2.type" 
+                    [(value)]="inputConfig2.value" 
+                    [placeholder]="'Nhap mat khau'"></input-element>
+            </div>
+            <div class="form-group__btn">
+                <button (click)="onLogin()">Login</button>
+                <button (click)="onClear()">Clear</button>
+            </div>
+        </div>
+    </div>
+    <footer-common></footer-common>
+</div>
+
+
+

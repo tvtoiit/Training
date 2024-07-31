@@ -1,0 +1,83 @@
+<div class="search-container">
+    <header-common></header-common>
+    <div class="search-container__dan">
+            <div class="search-container__text">
+                Login > Search Customer
+            </div>
+        <div class="search-container__context">
+            <div class="search-container__logo">
+                <div>Welcome: {{user}}</div>
+            </div>
+            <label (click)="handleLogout()" class="search-container__logout">
+                Log Out
+            </label>
+        </div>
+        <div class="search-container__line"></div>
+        <div class="search-container__handalSearch">
+            <div class="search-container__handalSearch--margin handalSearch-customerName">
+                <div class="handalSearch-customercommon handalSearch-customerName__text">Customer Name</div>
+                <input-element 
+                    [fieldType]="'2'"
+                    #cusName
+                    id="txtCustomerName" class="input_Customer--common"
+                    type="text" 
+                    placeholder="Nhap ten username" >
+                </input-element>
+            </div>
+            <div class="search-container__handalSearch--margin handalSearch-customerSex">
+                <div class="handalSearch-customercommon handalSearch-customerSex__text">Sex</div>
+                <select name="sex" class="input_Customer--select" id="cboSex">
+                    <option value="">blank</option>
+                    <option value="0" >Male</option>
+                    <option value="1">Female</option>
+                </select>
+            </div>
+            <div class="search-container__handalSearch--margin handalSearch-BirthdayFrom">
+                <div class="handalSearch-customercommon handalSearch-BirthdayFrom__text">Birthday</div>
+                <input-element 
+                    [fieldType]="'2'"
+                    #birthdayFrom
+                    id="txtBirthdayForm" class ="input_Customer--common txtCustomerValidateFROM"
+                    type="text" 
+                    placeholder="" >
+                </input-element>
+                <label for="html" class="handalSearch-customercommon handalSearch-BirthdayFrom__ngangcach">～</label>
+                <input-element 
+                    [fieldType]="'2'"
+                    #birthdayTo
+                    id="txtBirthdayTo" class="input_Customer--common txtCustomerValidateTO"
+                    type="text" 
+                    placeholder="" >
+                </input-element>
+            </div>
+            <div class="handalSearch-btnSearch">
+                <button (click)="handleSearch()" name="action" value="search" id="btnSearch">Search</button>
+            </div>
+        </div>
+        <div class="search-container__btnContext--chuyenhuong">
+        <input type="hidden" name="currentPage"/>	
+        <div class="search-container__btnContext--start">
+            <button name="pageAction" value="first">&lt;&lt;</button>
+             <button name="pageAction" value="previous">&lt;</button>
+
+            <label for="html" class="search-container__btnContext--textstart">Previous</label>
+        </div>
+        <div class="search-container__btnContext--end">
+            <label for="html" class="search-container__btnContext--textend">Next</label>
+
+            <button type="submit" name="pageAction" value="next">&gt;</button>  
+            <button type="submit" name="pageAction" value="last">&gt;&gt;</button>
+        </div>
+    </div>
+        <table class="search-container__table" id="sortableTable">
+            render data
+        </table>
+        <div class="search-container__btnnav">
+            <button (click)="handleAddUser()" class="btn-import__class search-container__nav-btnAdd">Add New</button>
+            <button (click)="handleDeleteUser()" class="btn-import__class" >Delete</button>
+            <button (click)="handleImport()" class="btn-import__class">Import</button>
+            <button (click)="handleExport()" class="btn-import__class">Import</button>
+        </div>
+    </div>
+    <footer-common></footer-common>
+</div>
