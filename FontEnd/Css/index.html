@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Transitions Example</title>
     <style>
-    .box {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        transition: transform 2s;
-    }
-
-    .box:hover {
-        transform: rotate(45deg) scale(1.5);
-    }
 
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    <div style="position: relative; height: 200px;">
+        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+            Canh giữa hoàn toàn
+        </span>
+
+    </div>
 </body>
 </html>

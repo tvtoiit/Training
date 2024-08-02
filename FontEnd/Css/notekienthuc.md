@@ -15,7 +15,7 @@ selector {
 ```
 # 1. Bố trí Grid
 
-display: grid;: Chuyển phần tử thành grid container.
+display: grid: Chuyển phần tử thành grid container.
 grid-template-columns: Xác định số lượng và kích thước các cột.
 grid-template-rows: Xác định số lượng và kích thước các hàng.
 grid-column và grid-row: Xác định vị trí của các phần tử con
@@ -83,6 +83,60 @@ var(--variable-name): Sử dụng biến CSS
 }
 
 # 6. Các cách căn giữa item
+6.1 Canh giữa theo chiều ngang
+- Sử dụng text-align: center;
+
+<div style="text-align: center;">
+  <span>Canh giữa theo chiều ngang</span>
+</div>
+
+- Sử dụng margin: 0, auto;
+<div style="width: 200px; margin: 0 auto;">
+  <span>Canh giữa theo chiều ngang</span>
+</div>
+
+6.2 Canh giữa theo chiều dọc
+- Sử dụng line-height -> cho giá trị bằng với phần tử height
+
+<div style="height: 30px; line-height: 30px;">
+  <span>Canh giữa theo chiều dọc</span>
+</div>
+
+- Sử dụng flexbox: Dùng flex container để canh giữa các phần tử bên trong cả chiều ngang và chiều dọc
+<div style="display: flex; align-items: center; height: 200px;">
+  <span>Canh giữa chiều doc</span>
+</div> 
+
+6.3 Canh giữa theo cả 2 chiều 
+- Sử dụng flexbox 
+
+<div style="height: 200px; display: flex; align-item: center; justify-content: center;">
+  <span>Canh giữa hoàn toàn</span>
+</div>
+
+- Sử dụng grid Layout
+
+<div style="height: 200px; display: grid; place-item: center;">
+  <span>Canh giữa hoàn toàn</span>
+</div>
+
+- Sử dụng vị trí tuyệt đối và chuyển đổi
+
+<div style="position: relative; height: 200px">
+  <div style="position: alsolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    Canh giữa hoàn toàn
+  </div>
+</div>
+
+6.4 Canh giữa trong grid
+- Dành riêng cho các container sử dụng css Grid Layout
+
+<div style="display: grid; align-item: center; justify-content: center; height: 200px">
+  <span>Canh giữa hoàn toàn</span>
+</div>
+
+
+
 
 
 

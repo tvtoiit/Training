@@ -148,8 +148,8 @@ stretch
   align-self: center; /* auto, flex-start, flex-end, center, baseline, stretch */
 }
 
-
-
-
-
+### Phần thực hành
+1. Xem hiểu hình vẽ flex box: https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.viblo.asia%2F0c116fbb-972d-4162-8506-bac8605cd704.png&tbnid=BdG4s0h7wUY1XM&vet=12ahUKEwjJ7oSMstWHAxUQm68BHa2DDjIQMygBegQIARBH..i&imgrefurl=https%3A%2F%2Fviblo.asia%2Fp%2Fhuong-dan-day-du-ve-css-flexbox-maGK7J9a5j2&docid=cWGYh-bkQXFPcM&w=563&h=333&q=flex%20box&ved=2ahUKEwjJ7oSMstWHAxUQm68BHa2DDjIQMygBegQIARBH
+2. Xem ví dụ qua: https://codepen.io/enxaneta/full/adLPwv
+3. Thực hành qua game: https://flexboxfroggy.com/#vi
 

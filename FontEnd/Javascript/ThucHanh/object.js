@@ -10,14 +10,8 @@
  * 9. Update doi tuong
  */
 
-const obj = {
-    name: 'Nguyen Van A',
-    lop: 'Cntt k42'
-}
-obj.title = 'Hoc lap trinh';
-delete obj.lop;
 
-console.log(obj);
+
 
 
 
