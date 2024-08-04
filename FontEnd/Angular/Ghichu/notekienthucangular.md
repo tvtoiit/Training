@@ -19,7 +19,33 @@ Binding sự kiện từ view tới component thông qua cú pháp `(event)="han
 ### Two-way Binding
 Binding hai chiều sử dụng `ngModel` thông qua cú pháp `[(ngModel)]="property"`.
 
-## 4. Directives
+## 4. Cách truyền dữ liệu giữa các component
+
+### Cách truyền dữ liệu từ component con lên component cha
+- Được thực hiện thông qua cơ chế  `input property`
+1. Khai báo `input property` trong component con
+@Input() message: string = '';
+
+2. Sử dụng component con trong component cha
+- Trong template của component cha sử dụng selector của component con và truyền dữ liệu vào Input Property bằng cú pháp `property binding` `[property]="value"`
+
+Ví dụ: <app-child [message]="partenMessage"></app-child>
+
+### Cách truyền dữ liệu từ component cha xuống component con
+1. Sử dụng EventEmitter và Output trong component con
+Ví dụ: <button (click)="senData()">Send data to parent</button>
+Ở component con khai báo 
+
+@Output() dataEvent = new EventEmitter<string>();
+senData = () => {
+  this.dataEvent.emit('Hello from child Component');
+} 
+
+2. Lắng nghe sự kiện trong component cha
+Ví dụ: <app-child (dataEvent)="receiveData($event)"></app-child>
+
+
+## 5. Directives
 Thay đổi cấu trúc của DOM hoặc điều chỉnh hành vi của các element.
 
 ### ngIf
@@ -37,7 +63,7 @@ Thay đổi lớp CSS: `[ngClass]="{'class-name': condition}"`.
 #### ngStyle
 Thay đổi kiểu CSS: `[ngStyle]="{'property': value}"`.
 
-## 5. Services và Dependency Injection
+## 6. Services và Dependency Injection
 Services là nơi chứa các logic dùng chung cho nhiều component. Dependency Injection (DI) là một mẫu thiết kế để cung cấp các dependency cho các class.
 
 ### @Injectable
@@ -66,7 +92,7 @@ export class MyComponent {
 }
 
 
-## 6. Routing
+## 7. Routing
 ### Cấu hình các route cho ứng dụng.
 
 Khai báo route
@@ -92,7 +118,7 @@ export class AppRoutingModule { }
 
 <router-outlet></router-outlet>
 
-## 7. Forms
+## 8. Forms
 ### Template-driven forms
 Sử dụng ngModel để quản lý các form.
 
@@ -118,7 +144,7 @@ export class MyFormComponent {
 }
 
 
-## 8. Pipes
+## 9. Pipes
 Sử dụng pipes trong template
 
 <p>{{ today | date }}</p>
