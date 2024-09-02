@@ -1,0 +1,10 @@
+<h1>Font - size - Editor</h1>
+<div>
+    <label >Enter font size (px): </label>
+    <input #element type="range" min="9" max="72" value="18"
+        (change)="changeFontSizeValue()">  
+</div> 
+
+<p class="output" [style.fontSize.px]="fontSize">
+    This is a paragrap
+</p>

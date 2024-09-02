@@ -1,36 +1,31 @@
 import { Component } from '@angular/core';
-
+ 
 @Component({
-    selector: 'calculator',
-    templateUrl: './calculator.component.html',
-    styleUrls: ['./calculator.component.css']
+  selector: 'calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
 })
 
-export class CalculatorComponent {
-  display: string = '';
+export class CalculatorComponent { 
+  // call api data user
+  // Full name
 
-  appendValue(value: string): void {
-    // Ngăn chặn toán tử liên tiếp
-    if (this.isOperator(value) && this.isOperator(this.display.slice(-1))) {
-      return;
-    }
-    this.display += value;
-  }
+  userName: string = "Nguyen văn A";
+  // Login validate
+  isCheckUser: boolean = false;
 
-  clear(): void {
-    this.display = '';
-  }
+  userList = [
+    'Nguyen Van A', 'Nguyen Van B',
+    'Nguyen Van C', 'Nguyen Van D',
+    'Nguyen Van C', 'Nguyen Van D'
+  ]
 
-  calculate(): void {
-    try {
-      const result = new Function('return ' + this.display)();
-      this.display = result;
-    } catch (e) {
-      this.display = 'Error';
-    }
-  }
+  /***
+   * input: type = color 
+   * Hiển thị lại màu đã chọn ở input 
+   */
 
-  isOperator(value: string): boolean {
-    return ['+', '-', '*', '/'].includes(value);
-  }
+
+
+
 }
