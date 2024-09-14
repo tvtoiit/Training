@@ -65,86 +65,151 @@
   - Khai báo biến với `let`, `const` và kiểu dữ liệu.
 
 - **Kiểu dữ liệu (Types)**
-  - Kiểu dữ liệu cơ bản: `string`, `number`, `boolean`, `array`, `tuple`, `enum`, `any`, `void`, `null`, `undefined`, `never`.
+  - Kiểu dữ liệu cơ bản: `number`, `string`, `boolean`, `array`, `tuple`, `enum`, `any`, `void`, `null`, `undefined`, `never`.
   - Sử dụng kiểu `any` và lý do nên tránh.
+  -----------------------------
+  <!-- Array -->
+  Có 2 cách phổ biến để khai báo mảng: 
+  1. Sử dụng type[]:
+    - let arr: number[] = [1, 2, 3];
+  2. Sử dụng Array<type>:
+    - let arr: Array<number> = [1, 2, 3];
+  => Ưu tiên type[] khi làm việc với mảng đơn giản và một chiều, vì nó ngắn gọn và dễ đọc hơn.
+  => Ưu tiên Array<type> khi làm việc với kiểu phức tạp (mảng đa chiều, kiểu tùy chỉnh) 
 
-- **Type Inference**
-  - Cách TypeScript tự động suy luận kiểu dữ liệu khi không khai báo rõ ràng.
+  <!-- tuple -->
+  Có số lượng và các phần tử cố định và các phần tử này có thể thuộc nhiều kiểu khác nhau: 
+  1. Khai báo tuple
+    let person: [string, number];
+    person = ["Mercedes", 300];
+  
+  2. Truy cập và thao tác với tuple
+    console.log(person[0]);
 
-- **Union và Intersection Types**
-  - Sử dụng `union` (`|`) và `intersection` (`&`) để kết hợp các kiểu dữ liệu.
+  3. Hạn chế của tuple 
+    Số lượng phần tử cố định: nếu cố tình thêm hoặc xóa sửa thì typescript sẽ cảnh báo lỗi
+    person.push("AB");
 
-## 2. Interface và Type Alias
+  4. Tuple với nhãn 
+    let person: [name: string, age: number] = ["Alice", 30];
+  - Nhãn giúp hiểu hơn chứ nó không ảnh hưởng đến hoạt động của tuple 
 
-- **Interface**
-  - Khai báo và sử dụng `interface` để định nghĩa cấu trúc của đối tượng.
-  - So sánh `interface` và `type alias`.
+  <!-- Enum (enumeration) -->
+  Cung cấp 3 loại enum: Numeric Enums, String Enums, Heterogeneous Enums
+  1. Numeric Enums (Enum số)
+    Đây là loại enum mặc định trong TypeScript. Mỗi thành viên của enum sẽ được gán một giá trị số, bắt đầu từ 0 nếu không chỉ định giá trị:
 
-- **Type Alias**
-  - Đặt tên cho các kiểu dữ liệu phức tạp với `type`.
+  EG.
+    enum Direction {
+      Up,    // 0
+      Down,  // 1
+      Left,  // 2
+      Right  // 3
+    }
+  
+  - Bạn có thể truy cập giá trị bằng cách: 
+    let direction: Direction = Direction.Up;
+    console.log(direction);
 
-## 3. Classes và Kế thừa
+  - Bạn cũng có thể khởi tạo enum với 1 giá trị cụ thể: 
+    enum Direction {
+      Up = 1,
+      Down,  // 2
+      Left,  // 3
+      Right  // 4
+    }
+  => Ở đây giá trị Up = 1 và các giá trị tiếp theo sẽ tự động tăng dần
 
-- **Classes**
-  - Khai báo và sử dụng các lớp trong TypeScript.
-  - Constructor và phương thức của lớp.
+  2. String Enums (Enum chuỗi)
+    enum Direction {
+      Up = "UP",
+      Down = "DOWN",
+      Left = "LEFT",
+      Right = "RIGHT"
+    }
 
-- **Modifiers và Tính đóng gói**
-  - Sử dụng `public`, `private`, `protected`, `readonly` để kiểm soát truy cập.
-  - Tính đóng gói và tính kế thừa trong TypeScript.
+  3. Heterogeneous Enums (Enum hỗn hợp)
+    -  TypeScript cũng cho phép tạo enum kết hợp cả số và chuỗi:
+    EG: enum Mix {
+          No = 0,
+          Yes = "YES"
+        }
+    - Hỗn hợp này thường ít được sử dụng và có thể gây nhầm lẫn, nên cần hạn chế dùng trừ khi có lý do rõ ràng.
 
-## 4. Function Types và Generics
+  4. Một số lưu ý khi sử dụng Enum
+  - Scope: enum trong TypeScript có phạm vi toàn cục (global) và có thể gây ra  xung đột tên nếu không được quản lý cẩn thận. Bạn nên sử dụng tên enum có     tính mô tả và tránh các tên chung chung.
 
-- **Function Types**
-  - Khai báo kiểu cho hàm và sử dụng hàm như đối số.
+  - Enums hoặc Union Types: Trong một số trường hợp, nếu enum đơn giản chỉ có các giá trị chuỗi, bạn có thể cân nhắc sử dụng Union Types để thay thế:   
 
-- **Generics**
-  - Khái niệm và áp dụng Generics để xây dựng hàm và lớp tái sử dụng.
+  - Kiểu Union Types: Là kiểu có thể nhận nhiều hơn một kiểu dữ liệu
+    let value: string | number;
+    + Trường hợp này, value có thể nhận giá trị là một chuỗi (string) hoặc một số (number).
 
-## 5. Modules và Namespaces
+<!-- Any -->
+  - Là kiểu dữ liệu cho phép lưu trữ với bất kì kiễu dữ liệu nào
+  1. Khi nào thì sử dụng any
+    - Tương tác với mã không kiểm soát được kiểu
+    - Dữ liệu có kiểu không xác định trước
+  
+  2. Khai báo và sử dụng any 
+    let randomValue: any;
+    randomValue = 40;
+    randomValue = "Hello";
+    ...
+  
+  3. Nguy cơ khi sử dụng any
+    - Khi bạn sử dụng any, TypeScript sẽ không kiểm tra kiểu dữ liệu, dẫn đến lỗi tiềm ẩn trong runtime:
 
-- **Modules**
-  - Sử dụng `export` và `import` để tổ chức mã nguồn thành các khối nhỏ hơn.
-  - Các loại modules: ES Module, CommonJS.
+    let value: any = "Hello";
+    console.log(value.toFixed(2));  // Không lỗi khi biên dịch, nhưng gây lỗi khi chạy
 
-- **Namespaces**
-  - Khái niệm và cách sử dụng `namespace` để nhóm các thành phần liên quan.
+    - Đoạn mã trên sẽ gây ra lỗi tại thời điểm chạy vì chuỗi không có phương thức toFixed.
 
-## 6. Decorators
+  4. Tránh lạm dụng any
+    - Mặc dù any mang lại tính linh hoạt, nhưng bạn nên tránh lạm dụng nó để duy trì tính an toàn của mã. Thay vì sử dụng any, bạn nên cố gắng sử dụng các kiểu dữ liệu cụ thể hơn hoặc Union Types để đảm bảo rằng mã của bạn được kiểm tra kiểu đúng cách.
 
-- **Decorators**
-  - Khái niệm về decorators và cách sử dụng với lớp, phương thức, thuộc tính, và tham số.
-  - Các loại decorators: `Class`, `Method`, `Property`, `Parameter`.
+  5. Thay thế any bằng các kiểu dữ liệu an toàn hơn
+    - Union Types: Khi bạn biết trước một tập hợp các kiểu dữ liệu có thể được chấp nhận
+      let value: string | number;
+      value = "Hello";  // Hợp lệ
+      value = 42;       // Hợp lệ
 
-## 7. Advanced Types
+    - Unknown: Nếu bạn muốn sử dụng kiểu không xác định nhưng vẫn yêu cầu kiểm tra kiểu trước khi sử dụng.
+      let value: unknown;
+      value = "Hello";
 
-- **Mapped Types**
-  - Sử dụng mapped types để biến đổi các kiểu hiện có thành kiểu mới.
+      if (typeof value === "string") {
+          console.log(value.toUpperCase());  // Hợp lệ
+      }
 
-- **Conditional Types**
-  - Sử dụng conditional types để xây dựng các kiểu dữ liệu dựa trên điều kiện.
+  6. Tóm tắt
+    - Any: Cho phép một biến lưu trữ bất kỳ kiểu dữ liệu nào và bỏ qua kiểm tra kiểu của TypeScript.
 
-- **Utility Types**
-  - Sử dụng các utility types như `Partial`, `Readonly`, `Pick`, `Record`, `Exclude`, `Extract`, `NonNullable`, `ReturnType`, `InstanceType`.
+    - Khi nào sử dụng: Khi không rõ kiểu dữ liệu, tương tác với mã JavaScript hoặc thư viện bên ngoài, hoặc khi chuyển đổi mã JavaScript sang TypeScript.
 
-## 8. Error Handling và Type Guards
+    - Nguy cơ: Sử dụng any có thể làm giảm tính an toàn của mã và tạo ra lỗi tiềm ẩn trong thời gian chạy.
 
-- **Error Handling**
-  - Cách xử lý lỗi với `try/catch` trong TypeScript.
+    - Lời khuyên: Hạn chế sử dụng any và tìm cách sử dụng các kiểu cụ thể hoặc an toàn hơn như unknown hoặc Union Types để duy trì tính an toàn của TypeScript.  
 
-- **Type Guards**
-  - Sử dụng type guards để kiểm tra và xử lý các kiểu dữ liệu khác nhau.
+<!-- Void -->
+  - Biểu thị rằng 1 hàm không trả về giá trị hoặc 1 biến 
+  1. Sử dụng void trong hàm: 
+  function logMessage(mess: string): void {
+    console.log(mess);
+  }
 
-## 9. Khai thác TypeScript trong các Framework
+  2. Sử dụng void trong biến
+  let unusable: void;
 
-- **Angular, React, Vue**
-  - Tích hợp TypeScript vào các framework phổ biến như Angular, React, và Vue.
-  - Sử dụng TypeScript để cải thiện tính rõ ràng và tính an toàn của mã nguồn.
+  3. Void vs Undefined
+    - void: Được sử dụng chủ yếu trong các khai báo hàm để biểu thị rằng hàm không trả về giá trị.
 
-## 10. Tooling và Cài đặt Cấu hình
+    - undefined: Là một giá trị thực tế có thể được gán cho biến. Trong TypeScript, kiểu undefined là một kiểu riêng biệt, bạn có thể sử dụng nó để chỉ rằng một biến không có giá trị.
 
-- **TypeScript Configuration**
-  - Hiểu file `tsconfig.json` và cách cấu hình TypeScript cho dự án.
+  4. Tóm tắt 
+    - void được sử dụng để biểu thị rằng một hàm không trả về giá trị. 
+    - Nó cũng có thể được sử dụng như một kiểu của biến, nhưng điều này ít hữu ích trong thực tế.
 
-- **Linting và Formatting**
-  - Sử dụng công cụ linting và formatting như TSLint hoặc ESLint với TypeScript để đảm bảo chất lượng mã nguồn.
+    - Trong hầu hết các trường hợp, bạn sẽ sử dụng void trong khai báo hàm thay vì sử dụng nó như một kiểu của biến.
+
+    - Khác với undefined, void được sử dụng để chỉ định ý định rõ ràng của nhà phát triển về việc không trả về bất kỳ giá trị nào từ một hàm.
