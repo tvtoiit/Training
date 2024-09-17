@@ -1,5 +1,7 @@
-function greet(name: string): string {
-    return `Hello, ${name}!`;
-  }
-  
-  console.log(greet("Hello World"));
+// Number, String 
+let str1: string = 'hello';
+
+let str2: String = new String('hello');
+
+console.log(str1.length);
+
