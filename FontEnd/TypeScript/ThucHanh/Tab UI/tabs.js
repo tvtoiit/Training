@@ -12,7 +12,6 @@ line.style.width = tabActive.offsetWidth + 'px';
 
 tabs.forEach((tab, index) => {
     const pane = panes[index];
-
     tab.onclick = function() {
         $('.tab-item.active').classList.remove('active');
         $('.tab-pane.active').classList.remove('active');
@@ -22,7 +21,5 @@ tabs.forEach((tab, index) => {
 
         this.classList.add('active');
         pane.classList.add('active');
-        
-        
     }
-})
+});
