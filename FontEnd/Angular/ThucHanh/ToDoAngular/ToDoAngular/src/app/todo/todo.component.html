@@ -1,0 +1,16 @@
+<div>
+    <input id="todo-input" [(ngModel)]="title" placeholder="Add a new todo" />
+    <button (click)="addToDo()">{{ isStatus !== null ? 'Edit' : 'Add' }}</button>
+  </div>
+  
+  <input id="search-input" (input)="render()" placeholder="Search todos" />
+  
+  <ul id="todo-list">
+    <li *ngFor="let todo of searchTodo(title)">
+      <input type="checkbox" [(ngModel)]="todo.completed" (change)="completeCheck(todo.id)" />
+      <span [ngStyle]="{'color': todo.completed ? 'red' : 'black'}">{{ todo.title }}</span>
+      <button (click)="editToDo(todo.id)">Edit</button>
+      <button (click)="deleteToDO(todo.id)">Delete</button>
+    </li>
+  </ul>
+  
