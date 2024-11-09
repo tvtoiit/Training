@@ -20,6 +20,9 @@ export class ApiService {
   postData(payload: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/data`, payload);
   }
-
-  // Có thể tạo thêm các hàm khác như PUT, DELETE nếu cần
+  
+  // Delete dữ liệu
+  deleteData(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/data/${id}`);
+  }
 }
