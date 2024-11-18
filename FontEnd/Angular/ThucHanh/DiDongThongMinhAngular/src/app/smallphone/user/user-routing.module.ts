@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './component/cart/cart.component';
 import { HomeComponent } from './component/home/home.component';
+import { DetailComponent } from './component/detail/detail.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-//   { path: 'product/:id', component: ProductDetailComponent }, // Đường dẫn có tham số, ví dụ: /product/1
-//   { path: 'cart', component: CartComponent },
-//   { path: '', redirectTo: 'home', pathMatch: 'full' } // Mặc định điều hướng đến Trang chủ
+  { path: 'smallphone', component: HomeComponent },
+  { path: 'product/:id', component: DetailComponent },
+  { path: 'cart', component: CartComponent }
 ];
 
 @NgModule({
